@@ -82,7 +82,11 @@ public class PersonReader {
                         lastName  = fields[2].trim();
                         title     = fields[3].trim();
                         yob       = Integer.parseInt(fields[4].trim());
-                        System.out.printf("\n%-8s%-25s%-25s%-6s%6d", id, firstName, lastName, title, yob);
+                        ArrayList<Person> folks = new ArrayList<>();
+                        Person personRec = new Person(id, firstName, lastName, yob, title );
+                        folks.add(personRec);
+
+                        System.out.println(String.valueOf(personRec));
                     }
                     else
                     {

@@ -19,7 +19,7 @@ public class ProductReader {
 
         final int FIELDS_LENGTH = 4;
 
-        String id, prodName, prodDescription;
+        String ID, prodName, prodDescription;
         double cost;
 
         try
@@ -68,11 +68,15 @@ public class ProductReader {
 
                     if(fields.length == FIELDS_LENGTH)
                     {
-                        id        = fields[0].trim();
+                        ID        = fields[0].trim();
                         prodName = fields[1].trim();
                         prodDescription  = fields[2].trim();
                         cost = Double.parseDouble(fields[3].trim());
-                        System.out.printf("\n%-8s%-25s%-25s%2f", id, prodName, prodDescription, cost);
+                        ArrayList<Product> products = new ArrayList<>();
+                        Product productRec = new Product(ID, prodName, prodDescription, cost);
+                        products.add(productRec);
+                        System.out.println(String.valueOf(productRec));
+
                     }
                     else
                     {
